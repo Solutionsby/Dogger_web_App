@@ -1,0 +1,46 @@
+
+
+// .main-page-wrapper{
+//     display: flex;
+//     width: 100%;
+//     justify-content: center;
+//     .dog-wrapper{
+//         display: flex;
+//         height: 100vh;
+//         width: 99%;
+//         transition: 0.5s ;
+//         &.flipped{
+//             transform:rotateY(180deg);
+//             .dog-photo{
+//                 width: 100%;
+//                 height: 50%;
+//                 background-position: center;
+//                 border-radius: 15px 15px 0 0 ;  }     
+//         }
+//         .dog-photo{
+//             width: 100%;
+//             height: 100%;       
+//         }
+//     }
+// }
+// .dog-photo{
+//     display: flex;
+//     align-items: flex-end;
+//     width: 100vw;
+//     height: 100%;
+//     background-repeat: no-repeat;
+//     background-size: cover;
+//     background-position: center; 
+//     transition: 0.8s;  }
+// .dog-data{
+//     display: flex;
+//     flex-direction: column;
+//     align-items: flex-start;
+//     margin: 0 0 10% 5%;
+//     width: 100%;
+//     height: 20%;
+//     .dog-name,.dog-age,.dog-gender{
+//         color:white
+//     }
+
+// }  
