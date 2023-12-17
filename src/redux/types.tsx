@@ -3,6 +3,9 @@
 export interface ToggleState {
   isToggleOn: boolean;
 }
+export interface ToogleTextState {
+  isToggleOnText:boolean;
+}
 
 interface Dog {
   id: number;

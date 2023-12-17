@@ -1,0 +1,82 @@
+@import "../../../CssVariables/colors.scss";
+.descriptionDogWrapper{
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    height: 50%;
+    overflow-y: auto;
+    flex-grow: 1;
+    transform: rotateY(180deg);
+    &.flipped{
+        display: flex;
+    }
+}
+.dog-data-flipped-side{
+    display: flex;
+    justify-content:left;
+    margin: 2% 0 0 2%;
+    h1{
+        margin-right: 2%;
+    }
+}
+.dog-data-more-flipped-side{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 40%;
+    margin: 2% 0 0 2%;
+}
+.data{
+    display: flex;
+    align-items: center;
+    width: 80%;
+    h2{
+        margin-left: 5%;
+    }
+    .icon{
+        width: 25%;
+        color: grey;
+    }
+}
+.dog-form-link{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    width: 100%;
+    a{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: black;
+        border: 1px black solid;
+        border-radius: 10px;
+        text-decoration: none;
+        margin-top: 2%;
+        font-size: 20px;
+        font-weight: bold;
+        width: 80%;
+        height: 45px;
+        transition: 0.5s;
+        &:hover{
+            background-color: $primary-color;
+            color:white;
+        }
+        :visited{
+            color: black;
+        }
+        svg{
+            margin-left: 5%;
+        }
+    }
+}
+.description-dog-flipped-side{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0 100px 0;
+    text-align: justify;
+    p{
+        width: 80%;
+    }
+}

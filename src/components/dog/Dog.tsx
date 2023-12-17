@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { toggleState } from '../../redux/toggleSlice';
 import { updateIndex } from '../../redux/sliderSlice';
 import  {RootState} from '../../redux/store'
+import { DescryptionDog } from './backSiede/DescriptionDog';
+import { FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import './dog.scss'
 import { useState,useRef } from 'react';
 
@@ -65,17 +67,24 @@ export const Dog:React.FC<Dog> = ()=>{
 
     return(
       <div className={`dog-wrapper ${ isToggleOn ? 'flipped' : ""}`}
-        onClick={handleTurnOver}
-        onTouchStart={handleTouchStart}
+      onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}>
-        <div className="dog-photo" style={{backgroundImage:`url("${currentDog.photo}")`}}>
+        <div className="dog-photo" style={{backgroundImage:`url("${currentDog.photo}")`}} onClick={handleTurnOver}>
+          {isToggleOn && <div className='arrow-return'><FontAwesomeIcon  className="arrow-return-icon"   icon={{ prefix: 'fas', iconName: 'caret-right' }} /></div>}
         {!isToggleOn && <div className="dog-data">
          <h1 className="dog-name">{currentDog.name}</h1>
          <h2 className="dog-age">{currentDog.age} lat</h2>
         <h2 className="dog-gender">{currentDog.gender}</h2>
         </div>}
         </div>
+        <DescryptionDog isToggleOn = {isToggleOn}
+        dogName = {currentDog.name}
+        dogAge = {currentDog.age}
+        dogGender={currentDog.gender}
+        dogSize={currentDog.size}
+        dogHair ={currentDog.hair}
+        dogDescription ={currentDog.description}/>
       </div>
     )
     

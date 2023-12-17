@@ -10,23 +10,22 @@
             .dog-photo{
                 width: 100%;
                 height: 50%;
+                justify-content: end;
+                // max-height: 450px;
                 background-position: center;
                 border-radius: 15px 15px 0 0 ;  }     
         }
-        .dog-photo{
-            width: 100%;
-            height: 100%;       
-        }
-    }
+}
 .dog-photo{
     display: flex;
     align-items: flex-end;
-    width: 100vw;
+    width: 100%;
     height: 100%;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;  
-    transition: 0.8s;  }
+    transition: 0.8s; 
+    flex-grow: 1; }
 .dog-data{
     display: flex;
     flex-direction: column;
@@ -38,8 +37,11 @@
         color:white
     }
 }
-.desripcion-about-dog{
-    width: 100%;
-    height: 50%;
-    background-color:rgba(0,0,0,0.5);
+.arrow-return{
+    align-self: flex-start;
+    .arrow-return-icon{
+        font-size: 50px;
+        color: white;
+        margin: 65px 20px 0 0;
+    }
 }
