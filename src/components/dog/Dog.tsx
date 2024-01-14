@@ -2,11 +2,12 @@ import {dogs} from '../../db/dogs.json'
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleState } from '../../redux/toggleSlice';
 import { updateIndex } from '../../redux/sliderSlice';
+import { setDesktop,setMobile } from '../../redux/screenSlice';
 import  {RootState} from '../../redux/store'
 import { DescryptionDog } from './backSiede/DescriptionDog';
 import { FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import './dog.scss'
-import { useState,useRef } from 'react';
+import { useState,useRef, useEffect } from 'react';
 
 interface Dog {
     id:number;
@@ -17,11 +18,12 @@ interface Dog {
   }
 
 
-export const Dog:React.FC<Dog> = ()=>{
+export const Dog = ()=>{
     const dispatch = useDispatch();
     const isToggleOn = useSelector((state : RootState) => state.toggle.isToggleOn);
 
-    const currentIndex = useSelector((state: RootState) => state.dogs.currentIndex)
+    const currentIndex = useSelector((state: RootState) => state.dogs.currentIndex);
+    const isDesktop = useSelector((state: RootState) => state.screen.isDesktop)
    
     const [startX, setStartX] = useState(0);
     const swipeRef = useRef<number | null>(null);
@@ -63,10 +65,24 @@ export const Dog:React.FC<Dog> = ()=>{
      }
      const currentDog = dogs[currentIndex]
 
+     const handleWindowResize = () =>{
+      if(window.innerWidth > 768){
+        dispatch(setDesktop())
+      }else{
+        dispatch(setMobile())
+      }
+     }
+     useEffect(()=>{
+      window.addEventListener('resize', handleWindowResize);
+      return () =>{
+        window.removeEventListener('resize',handleWindowResize)
+      }
+     },[dispatch]);
 
-
+     console.log(isDesktop)
     return(
-      <div className={`dog-wrapper ${ isToggleOn ? 'flipped' : ""}`}
+    <>
+      {!isDesktop && <div className={`dog-wrapper ${ isToggleOn ? 'flipped' : ""}`}
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}>
@@ -85,7 +101,9 @@ export const Dog:React.FC<Dog> = ()=>{
         dogSize={currentDog.size}
         dogHair ={currentDog.hair}
         dogDescription ={currentDog.description}/>
-      </div>
+      </div>}
+      {isDesktop && <div>Test</div>}
+      </>
     )
     
 }

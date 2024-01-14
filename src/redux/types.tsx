@@ -19,4 +19,7 @@ export interface DogsState {
   dogs: Dog[];
   currentIndex: number;
 }
-
+ export interface ScreenState {
+  screen:boolean
+  isDesktop:boolean
+ }
