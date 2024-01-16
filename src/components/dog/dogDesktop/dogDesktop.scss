@@ -7,8 +7,20 @@
 
     .dog-photo.dog-desktop{
         height: 45%;
-        width: 25%;
+        width: 15%;
         margin-top: 2%;
     }
 
 }
+.dog-desktop-flipped{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 90%;
+    background-color: black;
+    .dog-photo.dog-photo-desktop{
+        height: 95%;
+        width: 45%;
+    }
+}
+

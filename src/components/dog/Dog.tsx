@@ -1,5 +1,5 @@
 import {dogs} from '../../db/dogs.json'
-import { DogDesktop } from './dogDesktop/dogDesktop';
+import { DogDesktop } from './dogDesktop/DogDesktop';
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleState } from '../../redux/toggleSlice';
 import { updateIndex } from '../../redux/sliderSlice';
@@ -79,6 +79,8 @@ export const Dog = ()=>{
         window.removeEventListener('resize',handleWindowResize)
       }
      },[dispatch]);
+
+     console.log(isToggleOn)
     return(
     <>
       {!isDesktop && <div className={`dog-wrapper ${ isToggleOn ? 'flipped' : ""}`}
