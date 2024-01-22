@@ -101,7 +101,8 @@ export const Dog = ()=>{
         dogGender={currentDog.gender}
         dogSize={currentDog.size}
         dogHair ={currentDog.hair}
-        dogDescription ={currentDog.description}/>
+        dogDescription ={currentDog.description}
+        maxLenght={200}/>
       </div>}
       {isDesktop && <DogDesktop />}
       </>

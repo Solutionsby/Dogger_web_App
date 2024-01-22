@@ -1,0 +1,26 @@
+.slider{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 15px;
+    width: 80%;
+    height: 100%;
+    transition: 0.5s;
+    .slide-dots{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+       div{
+        margin-right: 15px;
+        font-size: 40px;
+        &.active{
+            color: white;
+        }
+       }
+
+    }
+}
