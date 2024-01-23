@@ -1,5 +1,7 @@
 *{
     margin: 0;
 }
-
+a:active,a:visited{
+    color:black;
+}
 

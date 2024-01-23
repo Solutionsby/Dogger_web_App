@@ -1,26 +1,32 @@
 @import '../../CssVariables/colors.scss';
 
 .adoption-wrapper{
-    background-color:$primary-color;
+    background-color: $primary-color;
+    overflow-y: auto; /* Ustawienie przewijania tylko w pionie dla zawartości .adoption-wrapper */
+    z-index: 1;
+    padding: 20px; 
 }
 .steps {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 45vh;
-    max-height: 350px;
+    height:55vh;
     width: 100%;
     transition: 2s;
     opacity: 0;
+    margin-bottom: 2vh;
     &.show{
         opacity: 1;
     }
     &:nth-child(odd){
-        transform:translateX(100px);
+        transform:translateX(50px);
     }
     &:nth-child(even){
-        transform:translateX(-100px);
+        transform:translateX(-50px);
+    }
+    &:last-child{
+        margin-bottom: 15vh;
     }
     .paws{
         display: flex;  
@@ -40,10 +46,28 @@
 
     }
     h2{
+        width: 50%;
+        text-align: center;
         margin: 2% 0 ;
     }
     p{ 
         text-align: justify;
-        width: 35%;
+        width: 50%;
+    }
+}
+@media screen and (orientation:landscape){
+    .adoption-wrapper{
+        margin-top: 10vh;
+    }
+    .steps {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height:25vh;
+        width: 100%;
+        transition: 2s;
+        opacity: 0;
+        margin-bottom: 2vh;
     }
 }

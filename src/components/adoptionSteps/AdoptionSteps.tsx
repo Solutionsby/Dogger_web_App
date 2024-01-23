@@ -35,7 +35,7 @@ export const AdoptionSteps = () => {
   useEffect(() => {
     setStepsVisibility((prevVisibility) =>
       prevVisibility.map((_, index) => {
-        return scrollPercentage >= index * 20 && !prevVisibility[index]
+        return scrollPercentage >= index * 2 && !prevVisibility[index]
           ? true
           : prevVisibility[index];
       })
@@ -61,4 +61,3 @@ export const AdoptionSteps = () => {
     </div>
   );
 };
-
