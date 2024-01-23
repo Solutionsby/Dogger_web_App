@@ -13,11 +13,14 @@ interface DogData{
     dogGender:string,
     dogSize:string,
     dogHair:string,
-    dogDescription:string
+    dogDescription:string,
+    desktop?:string,
+    maxLenght?:number
+
 }
 
 
-export const DescryptionDog:React.FC<DogData> = ({isToggleOn,dogName,dogAge,dogGender,dogSize,dogHair,dogDescription}) =>{
+export const DescryptionDog:React.FC<DogData> = ({isToggleOn,dogName,dogAge,dogGender,dogSize,dogHair,dogDescription,desktop,maxLenght}) =>{
     const dispatch = useDispatch();
     const isTextExpanded = useSelector((state : RootState) => state.toggleText.isToggleOnText)
 
@@ -32,7 +35,7 @@ export const DescryptionDog:React.FC<DogData> = ({isToggleOn,dogName,dogAge,dogG
     const handleClickexpandedText = ()=>{
         dispatch(toggleStateText())
     }
-    return <div className={`descriptionDogWrapper ${isToggleOn ? 'flipped' : ""}`}>
+    return <div className={`descriptionDogWrapper ${desktop} ${isToggleOn ? 'flipped' : ""}`}>
         <div className="dog-data-flipped-side">
             <h1 className="dog-name">{dogName}</h1>
             <h1>{dogAge}</h1>
@@ -55,8 +58,8 @@ export const DescryptionDog:React.FC<DogData> = ({isToggleOn,dogName,dogAge,dogG
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSeecnFYfqQ9Hi7JmCjwnw9XuWjO6qg6iTjWmxNYgwULh1LPZA/viewform?vc=0&c=0&w=1&flr=0&pli=1">Ankieta przedadopcyjna<FontAwesomeIcon  className="icon"   icon={{ prefix: 'fas', iconName: 'heart' }} /></a>
         </div>
         <div className="description-dog-flipped-side">
-            <p>{isTextExpanded ? dogDescription : expandText(dogDescription,200)}</p>
-            {dogDescription.length > 200 && (
+            <p>{isTextExpanded ? dogDescription : expandText(dogDescription,maxLenght!)}</p>
+            {dogDescription.length > maxLenght! && (
             <button onClick={handleClickexpandedText}>
             {isTextExpanded  ? 'Zwiń' : 'Rozwiń'}
         </button>

@@ -10,6 +10,10 @@
     &.flipped{
         display: flex;
     }
+    &.desktop{
+        transform: rotate(0);
+        height: 100%;
+    }
 }
 .dog-data-flipped-side{
     display: flex;

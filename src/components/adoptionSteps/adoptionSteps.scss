@@ -1,0 +1,49 @@
+@import '../../CssVariables/colors.scss';
+
+.adoption-wrapper{
+    background-color:$primary-color;
+}
+.steps {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 45vh;
+    max-height: 350px;
+    width: 100%;
+    transition: 2s;
+    opacity: 0;
+    &.show{
+        opacity: 1;
+    }
+    &:nth-child(odd){
+        transform:translateX(100px);
+    }
+    &:nth-child(even){
+        transform:translateX(-100px);
+    }
+    .paws{
+        display: flex;  
+        justify-content: center;
+        align-items: flex-end;
+        transform: rotateX(180deg);
+        height: 15vh;
+        width: 15vh;
+        max-height: 100px;
+        max-width: 100px;
+        background-size: cover;
+        .number{
+            margin-bottom: 5px;
+            transform: rotateX(180deg);
+            color: white;
+        }
+
+    }
+    h2{
+        margin: 2% 0 ;
+    }
+    p{ 
+        text-align: justify;
+        width: 35%;
+    }
+}
